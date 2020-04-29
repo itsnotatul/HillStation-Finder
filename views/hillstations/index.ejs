@@ -1,0 +1,42 @@
+<%- include("../partials/header") %>
+
+ <div class="container">
+		<header class="jumbotron">
+			<div class="container">
+				<h1><span class="glyphicon glyphicon-tent"></span>  Welcome to HillSation Finder!</h1>
+				<p>View our hand-picked Hillstations from all over the India.</p>
+				
+				<p>
+				<a class= "btn btn-primary btn-large" href ="/hillstations/new">Add new  Hillstation</a>
+				</p>
+			
+    
+			</div>
+		
+		</header>
+	
+		<div class = "row text-center"  style="display:flex; flex-wrap: wrap;"><!-- textcenter centres the text in thubnl card-->
+				<% for(var i=0;i<hillstations.length;i++){ %>
+					 <div class="col-md-3 col-sm-6">
+						 <div class="thumbnail">
+							<img src = "<%= hillstations[i]["image"] %>" >
+									 <div class="caption">
+										<h4> <%= hillstations[i]["name"] %> </h4> 
+									 </div>
+							          <p>
+									     <a href="/hillstations/<%= hillstations[i]["_id"] %>" class="btn btn-primary">More Info</a>	  
+							          </p>
+						 </div>
+					  
+				     </div>
+	
+				<% } %>
+		</div>
+</div>
+
+
+
+
+
+ <%- include("../partials/footer") %> <!--added ../ as we've to go back one direc. to get to header and footer file -->
+
